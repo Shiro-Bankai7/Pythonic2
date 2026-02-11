@@ -29,18 +29,18 @@ const UserInputPrompt: React.FC<{ prompt: string, onSubmit: (value: string) => v
     };
 
     return (
-        <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50">
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-8 shadow-2xl max-w-lg w-full">
-                <h3 className="text-xl font-bold text-cyan-400 mb-4">{prompt || "Input Required"}</h3>
+        <div className="fixed inset-0 bg-slate-950 flex items-center justify-center z-50">
+            <div className="bg-slate-900 border border-slate-700 rounded-lg p-8 max-w-lg w-full">
+                <h3 className="text-xl font-bold text-blue-300 mb-4">{prompt || "Input Required"}</h3>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
-                        className="w-full bg-slate-700 text-slate-200 border border-slate-600 rounded-md px-4 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                        className="w-full bg-slate-800 text-slate-200 border border-slate-600 rounded-md px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                         autoFocus
                     />
-                    <button type="submit" className="mt-4 w-full px-4 py-2 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-500 transition-colors">
+                    <button type="submit" className="mt-4 w-full px-4 py-2 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition-colors">
                         Submit
                     </button>
                 </form>
@@ -69,7 +69,7 @@ const OutputPanel: React.FC<{ result: ExecutionResult | null, isAwaitingInput: b
                     <pre className="whitespace-pre-wrap text-slate-300">{output}</pre>
                 )}
                 {isAwaitingInput && (
-                    <div className="flex items-center text-yellow-400 animate-pulse">
+                    <div className="flex items-center text-blue-300 animate-pulse">
                         <LoadingSpinner />
                         <span className="ml-2">Awaiting user input...</span>
                     </div>
@@ -92,7 +92,7 @@ const OutputPanel: React.FC<{ result: ExecutionResult | null, isAwaitingInput: b
 const AIReviewPanel: React.FC<{ result: AIReviewResult | null, isLoading: boolean }> = ({ result, isLoading }) => {
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center p-8 rounded-lg mt-4 bg-slate-800/50 border border-slate-700">
+            <div className="flex items-center justify-center p-8 rounded-lg mt-4 bg-slate-900 border border-slate-700">
                 <LoadingSpinner />
                 <span className="ml-3 text-slate-400">AI is reviewing your code...</span>
             </div>
@@ -102,12 +102,12 @@ const AIReviewPanel: React.FC<{ result: AIReviewResult | null, isLoading: boolea
 
     const CorrectnessBadge = () => (
         result.is_correct ? (
-            <div className="flex items-center gap-2 text-green-400">
+            <div className="flex items-center gap-2 text-blue-300">
                 <CheckCircleIcon className="w-6 h-6" />
                 <span className="font-bold text-lg">Correct</span>
             </div>
         ) : (
-            <div className="flex items-center gap-2 text-yellow-400">
+            <div className="flex items-center gap-2 text-blue-300">
                 <InfoIcon className="w-6 h-6" />
                 <span className="font-bold text-lg">Needs Improvement</span>
             </div>
@@ -117,10 +117,10 @@ const AIReviewPanel: React.FC<{ result: AIReviewResult | null, isLoading: boolea
     return (
          <div className="mt-6">
             <h3 className="text-lg font-bold text-slate-200 mb-3 flex items-center">
-                <SparklesIcon className="w-5 h-5 mr-2 text-purple-400" />
+                <SparklesIcon className="w-5 h-5 mr-2 text-blue-300" />
                 Submit for Review
             </h3>
-            <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-lg space-y-6">
+            <div className="bg-slate-900 border border-slate-700 p-6 rounded-lg space-y-6">
                 <div>
                    <CorrectnessBadge />
                 </div>
@@ -176,14 +176,14 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
       <h2 className="text-3xl font-extrabold text-slate-100 mb-2">{challenge.title}</h2>
       <p className="text-slate-400 mb-6">{challenge.description}</p>
       
-      <div className="bg-slate-800/50 border border-slate-700 p-6 rounded-lg">
-        <h3 className="text-xl font-bold text-cyan-400 mb-3">Mission Briefing</h3>
+      <div className="bg-slate-900 border border-slate-700 p-6 rounded-lg">
+        <h3 className="text-xl font-bold text-blue-300 mb-3">Mission Briefing</h3>
         <ul className="list-disc list-inside space-y-2 text-slate-300">
             {challenge.tasks.map((task, i) => <li key={i}>{task}</li>)}
         </ul>
         {challenge.bonus && (
              <div className="mt-4">
-                <h4 className="font-bold text-yellow-400">🛡️ Bonus Tasks:</h4>
+                <h4 className="font-bold text-blue-300">Bonus Tasks:</h4>
                 <ul className="list-disc list-inside space-y-1 text-slate-300">
                     {challenge.bonus.map((b, i) => <li key={i}>{b}</li>)}
                 </ul>
@@ -192,14 +192,14 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
         {challenge.exampleOutput && (
              <div className="mt-4">
                 <h4 className="font-bold text-slate-300">Example Output:</h4>
-                <pre className="bg-slate-900 p-3 rounded-md text-sm mt-1"><code>{challenge.exampleOutput}</code></pre>
+                <pre className="bg-slate-950 border border-slate-700 p-3 rounded-md text-sm mt-1"><code>{challenge.exampleOutput}</code></pre>
             </div>
         )}
       </div>
 
       {challenge.breakdown && challenge.breakdown.length > 0 && (
-        <div className="mt-6 bg-slate-800/50 border border-slate-700 p-6 rounded-lg">
-            <h3 className="text-xl font-bold text-cyan-400 mb-3">Problem Breakdown</h3>
+        <div className="mt-6 bg-slate-900 border border-slate-700 p-6 rounded-lg">
+            <h3 className="text-xl font-bold text-blue-300 mb-3">Problem Breakdown</h3>
             <ul className="list-decimal list-inside space-y-2 text-slate-300">
                 {challenge.breakdown.map((step, i) => <li key={i}>{step}</li>)}
             </ul>
@@ -208,14 +208,14 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
 
       {challenge.hints && challenge.hints.length > 0 && (
         <details className="mt-4">
-            <summary className="inline-flex items-center gap-2 cursor-pointer text-sm text-yellow-400 hover:text-yellow-300">
+            <summary className="inline-flex items-center gap-2 cursor-pointer text-sm text-slate-300 hover:text-blue-300">
                 <LightbulbIcon className="w-5 h-5" />
                 <span>Need a hint? ({challenge.hints.length} available)</span>
             </summary>
-            <div className="mt-2 p-4 bg-slate-800 rounded-lg border border-slate-700 text-sm space-y-3">
+            <div className="mt-2 p-4 bg-slate-900 rounded-lg border border-slate-700 text-sm space-y-3">
                 {challenge.hints.map((h, i) => (
-                    <div key={i} className="border-l-4 border-yellow-500/50 pl-4">
-                        <p className="font-semibold text-yellow-300">Hint {i+1}</p>
+                    <div key={i} className="border-l-4 border-blue-500/50 pl-4">
+                        <p className="font-semibold text-blue-300">Hint {i+1}</p>
                         <p className="text-slate-300">{h}</p>
                     </div>
                 ))}
@@ -225,7 +225,7 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
 
       <div className="mt-8">
         <h3 className="text-xl font-bold text-slate-100 mb-3">Your Code</h3>
-        <div className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 focus-within:ring-2 focus-within:ring-cyan-500">
+        <div className="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 focus-within:ring-2 focus-within:ring-blue-500">
           <textarea
             className="w-full h-64 bg-slate-800 text-slate-100 p-4 font-mono text-sm resize-y outline-none"
             value={userCode}
@@ -242,14 +242,14 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
         <button
           onClick={onRun}
           disabled={isLoading || isAIReviewLoading || !isRunnerReady}
-          className="flex items-center justify-center px-6 py-3 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
         >
           {isLoading ? <LoadingSpinner /> : 'Run Code'}
         </button>
         <button
           onClick={onGetAIReview}
           disabled={isLoading || isAIReviewLoading || !isRunnerReady}
-          className="flex items-center justify-center px-6 py-3 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-500 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center justify-center px-6 py-3 bg-blue-700 text-white font-bold rounded-lg hover:bg-blue-600 disabled:bg-slate-600 disabled:cursor-not-allowed transition-colors"
         >
           {isAIReviewLoading ? <LoadingSpinner /> : <><SparklesIcon className="w-5 h-5 mr-2" /> Submit for Review</>}
         </button>
@@ -260,7 +260,7 @@ const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
 
 
       {error && (
-          <div className="bg-red-900/50 border border-red-700 text-red-300 p-4 rounded-lg mt-4 flex items-center">
+          <div className="bg-slate-900 border border-red-700 text-red-300 p-4 rounded-lg mt-4 flex items-center">
               <XCircleIcon className="w-6 h-6 mr-3 flex-shrink-0" />
               <div>
                   <h4 className="font-bold">Error</h4>

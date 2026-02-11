@@ -2,22 +2,10 @@ import React, { useState } from 'react';
 
 import LandingPage from './components/LandingPage';
 import IDE from './IDE';
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from '@vercel/analytics/react';
 
 const App: React.FC = () => {
-  const [hasEntered, setHasEntered] = useState(false);
-
-  const handleEnter = () => {
-    // This component will be unmounted after the animation, so no need for complex state management
-    // The parent controls the visibility.
-  };
-
-  // A handler to set `hasEntered` after the fade-out animation completes
-  const onAnimationEnd = () => {
-     if (!hasEntered) {
-        setHasEntered(true);
-     }
-  };
+  const [hasEntered, setHasEntered] = useState<boolean>(false);
 
 
   return (

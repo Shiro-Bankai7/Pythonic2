@@ -15,84 +15,75 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    let animationFrameId: number;
-    
-    const resizeCanvas = () => {
+    const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    };
+    resize();
+    window.addEventListener('resize', resize);
 
-    const characters = 'PYTHONICJOURNEY010110CODING';
-    const charArray = characters.split('');
+    const charset = 'PYTHONICJOURNEY010110CODING';
+    const chars = charset.split('');
     const fontSize = 14;
     const columns = Math.ceil(canvas.width / fontSize);
-
-    const drops: number[] = [];
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
-    }
+    const drops = Array.from({ length: columns }, () => 1);
+    let frameId = 0;
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.05)';
+      ctx.fillStyle = 'rgba(2, 6, 23, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#06b6d4'; // cyan-500
+      ctx.fillStyle = '#3b82f6';
       ctx.font = `${fontSize}px monospace`;
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = charArray[Math.floor(Math.random() * charArray.length)];
+      for (let i = 0; i < drops.length; i += 1) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-        drops[i]++;
+        drops[i] += 1;
       }
-      animationFrameId = requestAnimationFrame(draw);
+
+      frameId = requestAnimationFrame(draw);
     };
 
     draw();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(frameId);
     };
   }, []);
 
-  const handleEnterClick = () => {
+  const beginEnter = () => {
+    if (isFadingOut) return;
     setIsFadingOut(true);
-    setTimeout(onEnter, 500); // Match animation duration
+    setTimeout(onEnter, 220);
   };
 
+  useEffect(() => {
+    if (isFadingOut) return;
+    const timer = setTimeout(() => {
+      beginEnter();
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, [isFadingOut, onEnter]);
+
   return (
-    <div 
-      className={`fixed inset-0 z-50 bg-slate-900 transition-opacity duration-500 ease-in-out ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}
-    >
+    <div className={`fixed inset-0 z-50 bg-slate-950 transition-opacity duration-200 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      <div className="relative z-10 flex items-center justify-center h-full animate-fade-in-slow">
-        <style>{`
-            @keyframes fade-in-slow {
-                from { opacity: 0; transform: translateY(20px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-            .animate-fade-in-slow {
-                animation: fade-in-slow 0.8s ease-out;
-            }
-        `}</style>
-        <div className="text-center bg-slate-800/50 backdrop-blur-md p-8 md:p-12 rounded-2xl border border-slate-700 max-w-lg mx-4">
-          <RocketIcon className="w-16 h-16 mx-auto mb-6 text-cyan-400" />
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">The Pythonic Journey</h1>
-          <p className="text-slate-300 mb-8">
+      <div className="h-full flex items-center justify-center px-4">
+        <div className="w-full max-w-md rounded-xl border border-slate-700 bg-slate-900 relative z-10 p-8">
+          <RocketIcon className="w-10 h-10 text-blue-400" />
+          <h1 className="mt-4 text-3xl font-semibold text-white">Pythonic</h1>
+          <p className="mt-2 text-slate-300">
             An interactive odyssey to master Python. Solve challenges, run code directly in your browser, and watch your skills ascend.
           </p>
           <button
-            onClick={handleEnterClick}
-            className="px-8 py-4 bg-cyan-600 text-white font-bold rounded-lg hover:bg-cyan-500 transition-all duration-300 transform hover:scale-105"
+            onClick={beginEnter}
+            className="mt-6 w-full rounded-md bg-blue-600 py-2.5 text-white font-semibold hover:bg-blue-500"
           >
-            Start Your Journey
+            Enter Now
           </button>
         </div>
       </div>

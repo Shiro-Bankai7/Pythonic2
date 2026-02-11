@@ -1,15 +1,28 @@
-# Run and deploy your Pythonic app
+# Pythonic (Vite + React + TypeScript)
 
-This contains everything you need to run your app locally.
+Pythonic is now organized as a micro-lesson platform with:
+- Daily 3-min mission loop
+- Pyodide runner (`Run`) + Gemini validation (`Check`)
+- Coins economy for hint tiers and streak freeze
+- Tracks + quests + badges + leaderboards + freestyle lab
+- Supabase-backed persistence with RLS and server-authoritative XP/coins
 
-## Run Locally
+## Local Setup
 
-**Prerequisites:**  Node.js
+Prerequisites: Node.js
 
-0. Clone the repo link
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Configure `.env.local`:
+   - `GEMINI_API_KEY=<your-gemini-key>` (or `VITE_GEMINI_API_KEY`)
+   - `VITE_SUPABASE_URL=<your-supabase-url>`
+   - `VITE_SUPABASE_ANON_KEY=<your-supabase-anon-key>`
+3. Apply Supabase migration from:
+   - `supabase/migrations/20260211090000_init_pythonic.sql`
+4. Start dev server:
    `npm run dev`
-4. (Extra) to add Python dependencies edit pythonRunnerService.ts
+
+## Testing
+
+- Run rule tests (streak + coin/xp logic):
+  `npm run test`
