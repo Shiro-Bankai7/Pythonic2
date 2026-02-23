@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import SEO from './SEO';
 import { RocketIcon } from './icons';
 
 interface LandingPageProps {
@@ -6,6 +8,7 @@ interface LandingPageProps {
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
+  const navigate = useNavigate();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
@@ -58,19 +61,28 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
   const beginEnter = () => {
     if (isFadingOut) return;
     setIsFadingOut(true);
-    setTimeout(onEnter, 220);
+    setTimeout(() => {
+      onEnter();
+      navigate('/app');
+    }, 220);
   };
 
   useEffect(() => {
-    if (isFadingOut) return;
-    const timer = setTimeout(() => {
-      beginEnter();
-    }, 1800);
-    return () => clearTimeout(timer);
+    // Disable auto-redirect for SEO/Landing page purposes
+    // if (isFadingOut) return;
+    // const timer = setTimeout(() => {
+    //   beginEnter();
+    // }, 1800);
+    // return () => clearTimeout(timer);
   }, [isFadingOut, onEnter]);
 
   return (
-    <div className={`fixed inset-0 z-50 bg-slate-950 transition-opacity duration-200 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`relative min-h-[calc(100vh-80px)] overflow-hidden bg-slate-950 transition-opacity duration-200 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+      <SEO
+        title="Home"
+        description="Master Python with Pythonic Journey. Interactive coding challenges, AI-powered feedback, and structured learning tracks."
+        canonical="/"
+      />
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <div className="h-full flex items-center justify-center px-4">
         <div className="w-full max-w-md rounded-xl border border-slate-700 bg-slate-900 relative z-10 p-8">
@@ -79,12 +91,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onEnter }) => {
           <p className="mt-2 text-slate-300">
             An interactive odyssey to master Python. Solve challenges, run code directly in your browser, and watch your skills ascend.
           </p>
-          <button
-            onClick={beginEnter}
-            className="mt-6 w-full rounded-md bg-blue-600 py-2.5 text-white font-semibold hover:bg-blue-500"
+          <Link
+            to="/app"
+            onClick={(e) => {
+              e.preventDefault();
+              beginEnter();
+            }}
+            className="mt-6 block text-center w-full rounded-md bg-blue-600 py-2.5 text-white font-semibold hover:bg-blue-500"
           >
             Enter Now
-          </button>
+          </Link>
         </div>
       </div>
     </div>

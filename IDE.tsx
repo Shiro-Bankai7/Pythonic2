@@ -25,6 +25,7 @@ import { HINT_TIER_COSTS } from './services/gamificationRules';
 import { hashCode } from './services/hashService';
 import { computeQuestProgress } from './services/questService';
 import { downloadDataUrl, generateShareCardDataUrl } from './services/shareCardService';
+import SEO from './components/SEO';
 import { getSupabaseClient, hasSupabaseConfig } from './services/supabaseClient';
 import { initPyodide, runPythonCode } from './services/pythonRunnerService';
 import {
@@ -1504,6 +1505,11 @@ const IDE: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
+      <SEO
+        title="Interactive IDE"
+        description="Solve Python challenges, run code in your browser, and learn by doing with our interactive micro-lesson engine."
+        canonical="/app"
+      />
       {isAwaitingInput ? <UserInputPrompt prompt={inputPrompt} onSubmit={onUserInput} /> : null}
 
       <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950">
