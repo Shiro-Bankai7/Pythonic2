@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pythonic-journey.com/</loc></url>
+  <url><loc>https://pythonic-journey.com/about</loc></url>
+  <url><loc>https://pythonic-journey.com/contact</loc></url>
+  <url><loc>https://pythonic-journey.com/privacy</loc></url>
+  <url><loc>https://pythonic-journey.com/terms</loc></url>
+
+  <url><loc>https://pythonic-journey.com/guides</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials</loc></url>
+  <url><loc>https://pythonic-journey.com/articles</loc></url>
+
+  <url><loc>https://pythonic-journey.com/guides/python-memory-management</loc></url>
+  <url><loc>https://pythonic-journey.com/guides/advanced-list-comprehensions</loc></url>
+  <url><loc>https://pythonic-journey.com/guides/python-decorators-in-depth</loc></url>
+  <url><loc>https://pythonic-journey.com/guides/asyncio-and-concurrency</loc></url>
+  <url><loc>https://pythonic-journey.com/guides/python-gil-explained</loc></url>
+  <url><loc>https://pythonic-journey.com/guides/python-metaprogramming-beyond-basics</loc></url>
+
+  <url><loc>https://pythonic-journey.com/tutorials/building-apis-with-fastapi</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials/testing-with-pytest</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials/pandas-and-numpy-basics</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials/web-scraping-with-beautifulsoup</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials/python-security-best-practices</loc></url>
+  <url><loc>https://pythonic-journey.com/tutorials/building-cli-tools-python</loc></url>
+
+  <url><loc>https://pythonic-journey.com/articles/python-2-vs-3-legacy</loc></url>
+  <url><loc>https://pythonic-journey.com/articles/async-programming-evolution</loc></url>
+  <url><loc>https://pythonic-journey.com/articles/python-cloud-native-future</loc></url>
+  <url><loc>https://pythonic-journey.com/articles/python-for-web-dev-2025</loc></url>
+  <url><loc>https://pythonic-journey.com/articles/the-gil-and-its-future</loc></url>
+  <url><loc>https://pythonic-journey.com/articles/why-python-is-perfect-for-beginners</loc></url>
+</urlset>

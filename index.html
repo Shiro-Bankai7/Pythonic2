@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Pythonic Journey</title>
     <link rel="icon" type="image/svg+xml" href="/pythonic-icon.svg" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9128798086677725"
      crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
@@ -49,10 +49,24 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-slate-950 text-slate-200">
-    <div id="root"></div>
+    <div id="root">
+      <div style="padding: 2rem; text-align: center; font-family: sans-serif;">
+        <h1 style="color: #3b82f6;">Pythonic Journey</h1>
+        <p>Loading the interactive Python learning experience...</p>
+        <nav style="margin-top: 1rem;">
+          <a href="/guides" style="color: #60a5fa; margin: 0 0.5rem;">Guides</a>
+          <a href="/tutorials" style="color: #60a5fa; margin: 0 0.5rem;">Tutorials</a>
+          <a href="/articles" style="color: #60a5fa; margin: 0 0.5rem;">Articles</a>
+        </nav>
+        <div style="margin-top: 2rem; color: #94a3b8; max-width: 600px; margin-left: auto; margin-right: auto;">
+          Pythonic Journey is a comprehensive platform for mastering Python programming.
+          From beginner tutorials to advanced architectural guides, we provide everything you need
+          to become a professional Python developer.
+        </div>
+      </div>
+    </div>
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
