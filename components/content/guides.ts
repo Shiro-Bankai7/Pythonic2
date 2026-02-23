@@ -2,7 +2,7 @@ export const guides = [
   {
     id: 'python-memory-management',
     title: 'Deep Dive into Python Memory Management: Architecture and Optimization',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 20, 2025',
     content: `
       <h2>Introduction to Python Memory Management</h2>
@@ -74,7 +74,7 @@ export const guides = [
   {
     id: 'advanced-list-comprehensions',
     title: 'Mastering Advanced List Comprehensions: The Pythonic Way to Process Data',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 21, 2025',
     content: `
       <h2>The Philosophy of Comprehensions</h2>
@@ -145,7 +145,7 @@ domains = {email.split('@')[1] for email in email_list}</code></pre>
   {
     id: 'python-decorators-in-depth',
     title: 'Mastering Python Decorators: The Definitive Guide to Meta-Programming',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 19, 2025',
     content: `
       <h2>The Magic of Meta-Programming</h2>
@@ -213,7 +213,7 @@ def greet(name):
   {
     id: 'asyncio-and-concurrency',
     title: 'Modern Concurrency in Python: A Deep Dive into Asyncio',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 18, 2025',
     content: `
       <h2>The Concurrency Revolution</h2>
@@ -257,7 +257,7 @@ def greet(name):
   {
     id: 'python-gil-explained',
     title: 'The Python Global Interpreter Lock (GIL): Myths, Realities, and the Future',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 17, 2025',
     content: `
       <h2>The Most Controversial Feature in Python</h2>
@@ -303,7 +303,7 @@ def greet(name):
   {
     id: 'python-metaprogramming-beyond-basics',
     title: 'Python Metaprogramming: Building Frameworks with Metaclasses and Hooks',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 15, 2025',
     content: `
       <h2>The Art of Code that Writes Code</h2>

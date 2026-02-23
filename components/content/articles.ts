@@ -2,7 +2,7 @@ export const articles = [
   {
     id: 'python-2-vs-3-legacy',
     title: 'The Great Migration: Lessons from the Python 2 to 3 Transition',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 9, 2025',
     content: `
       <h2>A Decade-Long Journey</h2>
@@ -43,7 +43,7 @@ export const articles = [
   {
     id: 'async-programming-evolution',
     title: 'The Evolution of Asynchronous Programming in Python',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 8, 2025',
     content: `
       <h2>The Concurrency Challenge</h2>
@@ -90,7 +90,7 @@ asyncio.run(main())</code></pre>
   {
     id: 'python-cloud-native-future',
     title: 'Python in the Cloud-Native Era: Challenges and Opportunities',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 7, 2025',
     content: `
       <h2>The Shift to the Cloud</h2>
@@ -120,7 +120,7 @@ asyncio.run(main())</code></pre>
   {
     id: 'python-for-web-dev-2025',
     title: 'State of Python Web Development in 2025',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 6, 2025',
     content: `
       <h2>Beyond the Simple Website</h2>
@@ -149,7 +149,7 @@ asyncio.run(main())</code></pre>
   {
     id: 'the-gil-and-its-future',
     title: 'The Python Global Interpreter Lock (GIL): Past, Present, and Future',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 5, 2025',
     content: `
       <h2>The Most Famous Lock in Computing</h2>
@@ -177,7 +177,7 @@ asyncio.run(main())</code></pre>
   {
     id: 'why-python-is-perfect-for-beginners',
     title: 'Why Python is the Ultimate Language for Beginners in 2025',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 4, 2025',
     content: `
       <h2>The Best Time to Start</h2>

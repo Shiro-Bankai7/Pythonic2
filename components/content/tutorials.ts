@@ -2,7 +2,7 @@ export const tutorials = [
   {
     id: 'building-apis-with-fastapi',
     title: 'Building Modern APIs with FastAPI: A Comprehensive Tutorial',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 16, 2025',
     content: `
       <h2>The Rise of FastAPI</h2>
@@ -88,7 +88,7 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app</code></pre>
   {
     id: 'testing-with-pytest',
     title: 'Testing Python Applications with Pytest: From Zero to Hero',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 15, 2025',
     content: `
       <h2>The Critical Role of Testing</h2>
@@ -161,7 +161,7 @@ def test_uppercase(input_str, expected):
   {
     id: 'pandas-and-numpy-basics',
     title: 'Data Science Foundations: Mastering Pandas and NumPy',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 14, 2025',
     content: `
       <h2>The Bedrock of Modern Data Science</h2>
@@ -215,7 +215,7 @@ avg_prices = df.groupby('category')['price'].mean()</code></pre>
   {
     id: 'web-scraping-with-beautifulsoup',
     title: 'Professional Web Scraping: BeautifulSoup, Requests, and Beyond',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 13, 2025',
     content: `
       <h2>The Power of Unstructured Data</h2>
@@ -275,7 +275,7 @@ for product in products:
   {
     id: 'python-security-best-practices',
     title: 'Defensive Programming: Python Security Best Practices',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 12, 2025',
     content: `
       <h2>The Security-First Mindset</h2>
@@ -325,7 +325,7 @@ pip-audit</code></pre>
   {
     id: 'building-cli-tools-python',
     title: 'Building Professional CLI Tools with Python: From Argparse to Click',
-    author: 'Jules',
+    author: 'OLUDIMU JOSHUA OLAYIWOLA',
     date: 'February 10, 2025',
     content: `
       <h2>The Command Line: The Developer's Native Habitat</h2>

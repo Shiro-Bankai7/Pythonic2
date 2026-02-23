@@ -51,15 +51,15 @@ const About: React.FC = () => {
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-4">The Team</h2>
         <p className="mb-6">
-          Pythonic Journey is built by a team of passionate educators and software engineers dedicated to the Python ecosystem.
+          Pythonic Journey is led by a dedicated expert in software engineering and project management, committed to delivering high-quality educational experiences.
         </p>
         <div className="flex items-center gap-6 p-6 bg-slate-900 border border-slate-800 rounded-xl">
-          <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">J</div>
+          <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-2xl font-bold">O</div>
           <div>
-            <h3 className="text-xl font-bold">Jules</h3>
-            <p className="text-blue-400">Lead Architect & Developer</p>
+            <h3 className="text-xl font-bold">OLUDIMU JOSHUA OLAYIWOLA</h3>
+            <p className="text-blue-400">Project Manager | Technical Project Coordinator | Software Engineer</p>
             <p className="text-sm text-slate-400 mt-2">
-              Software Engineer with a focus on interactive educational tools and developer experience.
+              Expert Software Engineer and Technical Project Coordinator with a focus on interactive educational tools and developer experience.
             </p>
           </div>
         </div>
